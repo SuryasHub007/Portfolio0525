@@ -1,0 +1,142 @@
+.projects-section {
+  padding: 80px 20px;
+  background: var(--bg2);
+  color: var(--text);
+  text-align: center;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+/* Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  margin-top: 50px;
+}
+
+/* Project Card */
+.project-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(0, 94, 255, 0.15),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.35s;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 94, 255, 0.25);
+}
+
+/* Project Image */
+.project-image {
+  width: 20%;
+  height: 10px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 18px;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+/* Project Title */
+.project-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+/* Tech Stack */
+.project-tech {
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Description */
+.project-desc {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+/* Button */
+.project-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, var(--primary), #005eff);
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.project-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 94, 255, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 30px;
+  }
+
+  .project-image {
+    height: 170px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-image {
+    height: 150px;
+  }
+
+  .project-card {
+    padding: 16px;
+  }
+}
